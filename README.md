@@ -16,5 +16,5 @@ security.dialog_enable_delay = 0 <br>
 
 ### to do
 
-You have to specify the download and activities.csv path (directory) for yourself in the top of the script. If you want you can specify the "copytoWD", then the script will copy the downloaded tracks into that folder and afterwards delete them from your download directory.
+You have to specify the download and activities.csv path (directory) for yourself in the top of the script. If you want you can specify the "copytoWD", then the script will copy the downloaded tracks into that folder and afterwards delete them from your download directory. <br>
 Important: you should not click arround while downloading the tracks because the download window has to be the active window (because "Enter" Key has only effect on the active window).
