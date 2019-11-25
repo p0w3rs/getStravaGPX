@@ -63,21 +63,21 @@ if (downloadWD != "" && archiveWD != "") {
       trys <- trys + 1
     }
     if (length(track) == 0) {
-      cat(paste0("Kein Track heruntergeladen. Track-ID: ", id[i], "\n"))
+      cat(paste0("No track downloaded. Track-ID: ", id[i], "\n"))
       missingid[length(missingid)+1] <- id[i]
     } else if (length(track) == 1) {
-      if (copytoWD != ""){
+      if (copytoWD != ""){# if copy directory specified
         file.copy(track, copytoWD, overwrite = T)
+        removetracks[length(removetracks)+1] <- track
       }
-      #copy 
-      removetracks[length(removetracks)+1] <- track
+      
     } else {
-      cat(paste0("Fehler. Track-ID: ", id[i], "\n"))
+      cat(paste0("Error track-ID: ", id[i], "\n"))
       missingid[length(missingid)+1] <- id[i]
     }
   
   }
-  #remove all tracks in DL folder
+  #remove all tracks in DL folder ifi copytoWD specified
   for (i in 1:length(removetracks)) {
     file.remove(removetracks[i])
   }
