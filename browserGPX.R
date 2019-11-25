@@ -9,15 +9,15 @@ archiveWD <- "" #For example: "C:/StravaArchiv"
 
 
 
+
 # the place where to copy the downloaded tracks if you dont want to keep them in DL-directory. Not necessary to work.
 copytoWD <- "" #For example: "C:/StravaArchiv/activities"
 
 
 
-
-
-if(!require(KeyboardSimulator)){
-    install.packages("KeyboardSimulator")
+#Package for the keyboard input "Enter"
+if(!require("KeyboardSimulator")){
+    install.packages("KeyboardSimulator", dependencies = T)
 }
 library("KeyboardSimulator")
 `%nin%` <- Negate(`%in%`)
@@ -25,6 +25,7 @@ library("KeyboardSimulator")
 
 
 
+#code
 if (downloadWD != "" && archiveWD != "") {
 
   setwd(archiveWD)
