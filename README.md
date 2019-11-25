@@ -10,8 +10,7 @@ The number has to be always the track ID. You can get all the track IDs in CSV f
 The script reads the ID's in the activities.csv and inserts the correct link in your browser, then it waits a second for the file to be ready for download. It then presses "Enter", waits another second and proceeds with next track.
 
 My firefox had a timer until the downloadbutton gets active. To minimize that you can open the config by typing "about:config" in the URL-panel and then change <br>
-security.dialog_enable_delay <br>  
-to 0<br>
+security.dialog_enable_delay <br> to 0 <br>
 
 
 ### to do
