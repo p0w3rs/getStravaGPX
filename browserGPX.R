@@ -77,10 +77,11 @@ if (downloadWD != "" && archiveWD != "") {
     }
   
   }
-  #remove all tracks in DL folder ifi copytoWD specified
+  #remove all tracks in DL folder if copytoWD specified
   for (i in 1:length(removetracks)) {
     file.remove(removetracks[i])
   }
 
+} else{
+  cat("Error: directories not specified")
 }
-
