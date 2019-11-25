@@ -1,9 +1,5 @@
 #strava browser gpx export
 
-library("KeyboardSimulator")
-`%nin%` <- Negate(`%in%`)
-
-
 
 #The place of your browsers downloadfolder 
 downloadWD <- "" #For example: "C:/Users/username/Downloads"  
@@ -15,6 +11,16 @@ archiveWD <- "" #For example: "C:/StravaArchiv"
 
 # the place where to copy the downloaded tracks if you dont want to keep them in DL-directory. Not necessary to work.
 copytoWD <- "" #For example: "C:/StravaArchiv/activities"
+
+
+
+
+
+if(!require(KeyboardSimulator)){
+    install.packages("KeyboardSimulator")
+}
+library("KeyboardSimulator")
+`%nin%` <- Negate(`%in%`)
 
 
 
