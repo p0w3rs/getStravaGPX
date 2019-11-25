@@ -32,7 +32,6 @@ if (downloadWD != "" && archiveWD != "") {
   actv <- read.csv("activities.csv")
   name <- as.character(actv[ncol(actv)])#last column for activity name
   id <- actv[,1] #first column for ID numbers
-  
   corrIDs <- vector()
   
   for (i in 1:length(name)) {
@@ -44,23 +43,20 @@ if (downloadWD != "" && archiveWD != "") {
   }
   id <- id[corrIDs]
   
-  
-  
   setwd(downloadWD)
   missingid <- vector()
   removetracks <- vector()
+  
   for (i in 1:length(id)) {
-    
-    
     initialFilelist <- list.files()
-    #jetzt downloaden
+    #now download
     browseURL(paste0("https://www.strava.com/activities/", id[i], "/export_gpx"))
     trys <- 0
-    while (trys < 3) {
+    while (trys < 4) {
       track <- NULL
-      Sys.sleep(1.5)
-      keybd.press("enter")
       Sys.sleep(1)
+      keybd.press("enter")
+      Sys.sleep(1.5)
       #getfile
       newFilelist <-  list.files()
       track <- newFilelist[newFilelist %nin% initialFilelist]
@@ -82,8 +78,8 @@ if (downloadWD != "" && archiveWD != "") {
       cat(paste0("Error track-ID: ", id[i], "\n"))
       missingid[length(missingid)+1] <- id[i]
     }
-  
   }
+  
   #remove all tracks in DL folder if copytoWD specified
   for (i in 1:length(removetracks)) {
     file.remove(removetracks[i])
